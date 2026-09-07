@@ -1,9 +1,9 @@
-def calcular_dosagem(peso,idade):
+def calcular_dosagem(idade,peso):
     if idade <1 or idade >130:
         raise ValueError
     if peso < 5 or peso >200:
         raise ValueError
-    if idade <12:
+    if idade >=12:
         if peso >=60:
             return 1000
         else:
@@ -21,3 +21,4 @@ def calcular_dosagem(peso,idade):
         elif peso >30:
             return 750
 
+print(calcular_dosagem(20, 60))
