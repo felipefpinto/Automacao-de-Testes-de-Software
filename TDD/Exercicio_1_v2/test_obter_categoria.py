@@ -18,7 +18,7 @@ def test_obter_categoria_infantil_b_9():
 
 def test_obter_categoria_infantil_b_10():
     assert obter_categoria(10)=='Infantil B'
-'''
+
 def test_obter_categoria_juvenil_a_11():
     assert obter_categoria(11)=='Juvenil A'
 
@@ -44,4 +44,4 @@ def test_obter_categoria_senior_18():
     assert obter_categoria(18)=='Senior'
 
 def test_obter_categoria_senior_19():
-    assert obter_categoria(19)=='Senior'''
+    assert obter_categoria(19)=='Senior'
