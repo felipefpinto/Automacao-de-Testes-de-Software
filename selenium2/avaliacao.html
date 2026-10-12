@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avaliação disciplina automação de teste de software</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f1eb;color:#183a37;font-family:Arial,sans-serif}main{max-width:1100px;margin:34px auto;display:grid;grid-template-columns:300px 1fr;background:white;border:1px solid #dadfd8;border-radius:24px;overflow:hidden;box-shadow:0 16px 50px #123b3310}aside{background:#163d37;color:#f4f3e9;padding:38px 30px;position:relative} .marca{font-size:12px;letter-spacing:3px;font-weight:bold}.numero{font-size:100px;line-height:1;margin:60px 0 20px;color:#c9e985;font-weight:bold}aside h2{font-size:30px;line-height:1.15;letter-spacing:-1px}aside p{color:#c6d8cf;font-size:15px;line-height:1.7}.selo{display:inline-block;border:1px solid #7d9b88;padding:9px 12px;border-radius:30px;font-size:12px;margin-top:24px}.conteudo{padding:30px 38px}.eyebrow{font-size:11px;letter-spacing:2px;color:#617a67;font-weight:bold}h1{font-size:27px;line-height:1.18;letter-spacing:-.7px;margin:10px 0}.intro{font-size:13px;color:#67756d;margin-bottom:22px}fieldset{border:0;padding:0;margin:0 0 20px}legend{width:100%;font-size:13px;font-weight:bold;border-bottom:1px solid #e6e9e1;padding-bottom:9px;margin-bottom:13px}.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}.data{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:10px}label{display:block;font-size:12px;font-weight:bold;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid #cdd7cd;border-radius:9px;background:#fafbf8;color:#243c33;padding:10px 12px;font:14px Arial,sans-serif}input,select{height:40px}textarea{resize:vertical;min-height:62px}input:focus,select:focus,textarea:focus{outline:2px solid #73a07b;outline-offset:2px}.campo{margin-top:12px}.opcional{color:#7d877f;font-weight:normal}button{border:0;background:#183e36;color:white;border-radius:10px;padding:13px 24px;font-size:14px;font-weight:bold;cursor:pointer}button:hover{background:#2d5b4c}.rodape{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px}.rodape small{color:#788078;font-size:11px}#resultado{margin-top:15px;background:#e8f4dc;border-radius:8px;padding:12px;color:#234a2e;font-size:13px}#resultado:empty{display:none}@media(max-width:760px){main{margin:15px;grid-template-columns:1fr}aside{padding:24px}.numero{font-size:42px;margin:16px 0}aside h2{font-size:23px}aside p,.selo{display:none}.conteudo{padding:24px}.grid{grid-template-columns:1fr}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<main>
+  <aside><div class="marca">ESCUTA / ACADÊMICA</div><div class="numero">03<span style="font-size:20px"> / AP2</span></div><h2>Aprender.<br>Testar.<br>Evoluir.</h2><p>Uma boa experiência de aprendizagem também se constrói com a sua avaliação.</p><span class="selo">Sua perspectiva faz diferença</span></aside>
+  <section class="conteudo">
+    <div class="eyebrow">FEEDBACK DA DISCIPLINA</div>
+    <h1>Avaliação disciplina automação de teste de software</h1>
+    <p class="intro">Conte como foi sua experiência. Todos os campos são obrigatórios, exceto observações.</p>
+    <form id="avaliacao">
+      <fieldset><legend>01 — Sobre você</legend>
+        <div class="grid"><div><label for="nome">Nome</label><input id="nome" name="nome" type="text" placeholder="Seu nome completo" required></div><div><label for="ra">RA</label><input id="ra" name="ra" type="text" placeholder="Seu registro acadêmico" required></div></div>
+        <div class="campo"><label>Data de nascimento</label><div class="data"><div><label for="dia">Dia</label><input id="dia" name="dia" type="number" min="1" max="31" placeholder="DD" required></div><div><label for="mes">Mês</label><input id="mes" name="mes" type="number" min="1" max="12" placeholder="MM" required></div><div><label for="ano">Ano</label><input id="ano" name="ano" type="number" min="1900" max="2100" placeholder="AAAA" required></div></div></div>
+      </fieldset>
+      <fieldset><legend>02 — Sua experiência</legend>
+        <div class="grid"><div><label for="curso">Curso</label><select id="curso" name="curso" required><option value="">Selecione seu curso</option><option value="ads">Análise e desenvolvimento de Sistemas</option><option value="si">Sistemas de Informação</option></select></div><div><label for="aproveitamento">Aproveitamento do conteúdo</label><select id="aproveitamento" name="aproveitamento" required><option value="">Nota de 0 a 10</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div></div>
+        <div class="campo"><label for="sugestoes">Sugestões de melhoria próximas turmas</label><textarea id="sugestoes" name="sugestoes" placeholder="O que podemos melhorar nas próximas turmas?" required></textarea></div>
+        <div class="campo"><label for="observacoes">Observações <span class="opcional">— opcional</span></label><textarea id="observacoes" name="observacoes" placeholder="Algo mais que você gostaria de compartilhar?"></textarea></div>
+      </fieldset>
+      <div class="rodape"><small>Um espaço para ouvir e melhorar.</small><button type="submit" id="enviar">Enviar Feedback</button></div>
+      <div id="resultado" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+</main>
+<script>
+const formulario = document.getElementById('avaliacao');
+formulario.addEventListener('submit', function(evento) {
+  evento.preventDefault();
+  const dia = Number(formulario.elements.dia.value);
+  const mes = Number(formulario.elements.mes.value);
+  const ano = Number(formulario.elements.ano.value);
+  const data = new Date(ano, mes - 1, dia);
+  const resultado = document.getElementById('resultado');
+  if (data.getFullYear() !== ano || data.getMonth() !== mes - 1 || data.getDate() !== dia || data > new Date()) {
+    resultado.textContent = 'Confira a data de nascimento: informe uma data válida e não futura.';
+    return;
+  }
+  resultado.textContent = 'Feedback enviado com sucesso! Obrigado, ' + formulario.elements.nome.value.trim() + '. Sua avaliação foi concluída nesta demonstração.';
+});
+</script>
+</body>
+</html>

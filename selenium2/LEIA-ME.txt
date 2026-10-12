@@ -1,0 +1,38 @@
+SELENIUM — 03 DA AP2
+
+Formulário criado para esta atividade com identidade visual Escuta / Acadêmica,
+cores verde e creme, painel lateral e campos divididos em duas seções.
+Não é possível verificar se algum outro aluno produziu uma tela semelhante.
+
+COMO EXECUTAR
+1. Extraia todos os arquivos para uma mesma pasta.
+2. Tenha Python e Google Chrome instalados.
+3. Abra um terminal nessa pasta e execute:
+   python -m pip install -r requirements.txt
+   python automacao_avaliacao.py
+
+O Selenium Manager pode precisar de internet para obter o driver na primeira execução.
+O script usa dados fictícios (Marina Costa, RA 2026001234).
+Você pode substituir esses valores no Python antes de executar.
+
+O QUE O SCRIPT FAZ
+Abre o HTML local, preenche nome, RA, dia, mês, ano, curso, nota,
+sugestões e observações. Usa localizadores ID, NAME, CSS_SELECTOR e XPATH.
+Há time.sleep(0.8) entre as interações, conforme o enunciado.
+Captura o formulário preenchido, clica em Enviar Feedback e verifica a confirmação.
+O envio é simulado na própria página, sem banco de dados ou transmissão externa.
+Observações é opcional. Nome e RA são campos de texto.
+A lista de cursos tem as duas opções solicitadas e a lista de notas vai de 0 a 10.
+
+ARQUIVOS GERADOS AO EXECUTAR COM SUCESSO
+print_formulario.png — captura real do formulário preenchido.
+print_confirmacao.png — captura real da confirmação de envio.
+entrega_ap2_com_prints.zip — HTML, Python, instruções, dependências e os dois prints.
+Esse é o ZIP final para enviar ao professor.
+
+VERIFICAÇÃO NESTE AMBIENTE
+A sintaxe Python e a presença dos campos foram verificadas.
+A visualização no navegador integrado foi impedida por restrições de acesso
+à página local. Portanto, os prints ainda não estão incluídos neste pacote
+e a execução Selenium não foi confirmada aqui. Execute o comando acima para
+gerar as capturas e o ZIP completo automaticamente.
